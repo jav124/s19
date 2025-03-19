@@ -1,31 +1,23 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>sign-up</ion-title>
+    <ion-title>Sign Up</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
-  <b>Correo</b>
-  <br>
-  <input #emailInput type="text" placeholder="email" style="color: black;" [(ngModel)]="username" name="username">
-  <br>
-  <br>
-  <b>Password</b>
-  <br>
-  <input #passwordInput type="password" placeholder="password"style="color: black;" [(ngModel)]="password" name="password">
-  <br>
-  <br>
-  <button class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-    type="submit">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+    </ion-item>
 
-    registrarse
-  </button>
-  <!-- (click)="addItem(emailInput.value, passwordInput.value); emailInput.value = ''; passwordInput.value = '';" -->
-</form>
-  <br>
-  <button (click)="onHome()">
-    go to login
-</button>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+    </ion-item>
 
+    <ion-button expand="block" type="submit">Crear Cuenta</ion-button>
+  </form>
+
+  <ion-button expand="block" fill="clear" (click)="onSignUp()">Ir a Inicio</ion-button>
 </ion-content>
